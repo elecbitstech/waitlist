@@ -1,6 +1,10 @@
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
 import { Noto_Sans } from "next/font/google";
 import SitePreviewImage from "../../public/SitePreview.png";
+import { db } from "./firebaseConfig";
+import { collection, addDoc } from "firebase/firestore";
 
 const notoSans = Noto_Sans({ subsets: ["latin"] });
 
@@ -13,6 +17,48 @@ interface Props {
 
 
 export default function Home() {
+    const [formData, setFormData] = useState({
+        email: "",
+        name: "",
+        phoneNumber: "",
+        organizationName: "",
+        designation: ""
+    });
+
+    const handleChange = (e:any) => {
+        setFormData({
+            ...formData,
+            [e.target.name]:e.target.value
+        });
+
+        console.log(formData)
+    };
+
+    const handleSubmit = async (e:any) => {
+        e.preventDefault();
+        const emailResponse = await fetch('/api/sendEmail', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        });
+
+        if (emailResponse.ok) {
+            alert("Email sent successfully!");
+        } else {
+            alert("Failed to send email.");
+        }
+
+        try {
+            const docRef = await addDoc(collection(db, "signups"), formData);
+            console.log("Document written with ID: ", docRef.id);
+        } catch (e) {
+            console.error("Error adding document: ", e);
+        }
+
+    };
+
     return (
         <main className="flex min-h-screen flex-col items-center">
             <div id="top-bar" className="flex justify-between w-full bg-[#141414] p-2">
@@ -32,32 +78,32 @@ export default function Home() {
                     <p className={`${notoSans.className} text-[#bfbfbf] font-bold tracking-widest`}>Source Components Like A Pro</p>
                 </div>
                 <div className="w-full flex flex-col items-center ">
-                    <form className="w-10/12 mt-8 grid grid-cols-2 gap-4 mb-10">
+                    <form className="w-10/12 mt-8 grid grid-cols-2 gap-4 mb-10" onSubmit={handleSubmit}>
 
                         <div className="col-span-2">
                             <label>{"Mail ID"}</label>
                             <div className="mt-2"></div>
-                            <input className="w-full" />
+                            <input className="w-full" name="email" type="email" value={formData.email} onChange={handleChange} required />
                         </div>
                         <div className="col-span-1">
                             <label>{"Name"}</label>
                             <div className="mt-2"></div>
-                            <input className="w-full" />
+                            <input className="w-full" name="name" type="text" value={formData.name} onChange={handleChange} required />
                         </div>
                         <div className="col-span-1">
                             <label>{"Phone Number"}</label>
                             <div className="mt-2"></div>
-                            <input className="w-full" />
+                            <input className="w-full" name="phoneNumber" type="text" value={formData.phoneNumber} onChange={handleChange} required />
                         </div>
                         <div className="col-span-1">
                             <label>{"Organization Name"}</label>
                             <div className="mt-2"></div>
-                            <input className="w-full" />
+                            <input className="w-full" name="organizationName" type="text" value={formData.organizationName} onChange={handleChange} required />
                         </div>
                         <div className="col-span-1">
                             <label>{"Designation"}</label>
                             <div className="mt-2"></div>
-                            <input className="w-full" />
+                            <input className="w-full" name="designation" type="text" value={formData.designation} onChange={handleChange} required />
                         </div>
 
                         <button className="w-full col-span-2 mt-4 bg-[#232331] hover:bg-[#3365fb] py-4 rounded-md">Join the Waitlist for Priority Access <Image className="inline-block" src={"/RightArrow.png"} alt="" width={20} height={20} /></button>
