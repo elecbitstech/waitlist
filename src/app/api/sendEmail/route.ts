@@ -164,8 +164,8 @@ export async function POST(req: NextRequest) {
                                             <tr>
                                               <td style="padding-right: 0px;padding-left: 0px;" align="left">
             
-                                                <img align="left" border="0" src="src/app/public/assets/elecbits_logo.png" alt="" title="" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 23%;max-width: 102.58px;"
-                                                  width="102.58" />
+                                              <img align="left" border="0" src="https://elecbits.in/wp-content/uploads/2022/07/Elecbits-Main-Logo.png" alt="" title="" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 23%;max-width: 102.58px;" width="102.58" />
+
             
                                               </td>
                                             </tr>
@@ -560,22 +560,25 @@ export async function POST(req: NextRequest) {
             </body>
             
             </html>`,
-        };
+    };
 
-        await transporter.sendMail(mailOptions);
-        return new Response(JSON.stringify({ message: 'Email sent successfully' }), {
-            status: 200,
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        });
-    } catch (error) {
-        console.error(error);
-        return new Response(JSON.stringify({ message: 'Error sending email' }), {
-            status: 500,
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        });
-    }
+    await transporter.sendMail(mailOptions);
+    return new Response(
+      JSON.stringify({ message: "Email sent successfully" }),
+      {
+        status: 200,
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+  } catch (error) {
+    console.error(error);
+    return new Response(JSON.stringify({ message: "Error sending email" }), {
+      status: 500,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  }
 }
