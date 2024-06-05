@@ -30,6 +30,7 @@ export default function Home() {
     });
     const [buttonStatus, setButtonStatus] = useState(false);
     const [phoneError, setPhoneError] = useState("");
+    const [message, setMessage] = useState("");
 
     const handleChange = (e:any) => {
         setFormData({
@@ -56,28 +57,43 @@ export default function Home() {
         }
 
         setButtonStatus(true);
-        const emailResponse = await fetch('/api/sendEmail', {
+
+        const res = await fetch('/api/storeUser', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+              'Content-Type': 'application/json',
             },
-            body: JSON.stringify(formData)
-        });
+            body: JSON.stringify(formData),
+          });
+      
+          const data = await res.json();
+          setMessage(data.message);
+        
+        if(data.message !== "Email already exists"){
+            const emailResponse = await fetch('/api/sendEmail', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
 
-        if (emailResponse.ok) {
-            alert("Email sent successfully!");
-            setButtonStatus(false);
-        } else {
-            alert("Failed to send email.");
-            setButtonStatus(false);
+            if (emailResponse.ok) {
+                alert("Email sent successfully!");
+            } else {
+                alert("Failed to send email.");
+            }    
         }
 
-        try {
-            const docRef = await addDoc(collection(db, "signups"), formData);
-            console.log("Document written with ID: ", docRef.id);
-        } catch (e) {
-            console.error("Error adding document: ", e);
-        }
+        setButtonStatus(false);
+
+        
+        // try {
+        //     const docRef = await addDoc(collection(db, "signups"), formData);
+        //     console.log("Document written with ID: ", docRef.id);
+        // } catch (e) {
+        //     console.error("Error adding document: ", e);
+        // }
 
     };
 
@@ -141,6 +157,7 @@ export default function Home() {
                             )}
                         </button>
                     </form>
+                    {message && <p>{message}</p>}
                     <p className="text-3xl font-bold">Be the First to Experience</p>
                     <p className="text-3xl bg-gradient-to-r from-[#33E7FF] to-[#0702FC] inline-block text-transparent bg-clip-text font-bold">Something Amazing</p>
                     <Image src="/LED.png" alt={""} height={1000} width={1500} className="absolute left-1/2 translate-x-[-50%] translate-y-[30%] z-[-10]" />
