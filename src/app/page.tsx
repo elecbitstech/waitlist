@@ -60,16 +60,20 @@ export default function Home() {
 
     setButtonStatus(true);
 
-    const res = await fetch("/api/storeUser", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
+    // const res = await fetch("/api/storeUser", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(formData),
+    // });
 
-    const data = await res.json();
-    setMessage(data.message);
+    // const data = await res.json();
+    // setMessage(data.message);
+
+    const data = {
+        message: ""
+    }
 
     if (data.message !== "Email already exists") {
       const emailResponse = await fetch("/api/sendEmail", {
@@ -143,6 +147,9 @@ export default function Home() {
                 onChange={handleChange}
                 required
               />
+              {message && (
+                <p className="text-red-500 text-xs mt-1">{message}</p>
+              )}
             </div>
             <div className="col-span-1">
               <label>{"Name"}</label>
@@ -244,7 +251,6 @@ export default function Home() {
               )}
             </button>
           </form>
-          {message && <p>{message}</p>}
           <p className="text-3xl font-bold">Be the First to Experience</p>
           <p className="text-3xl  bg-gradient-to-r from-[#33E7FF] to-[#0702FC] inline-block text-transparent bg-clip-text font-bold">
             Something Amazing
