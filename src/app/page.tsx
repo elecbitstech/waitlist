@@ -1,14 +1,12 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import { Noto_Sans } from "next/font/google";
+// import { Noto_Sans } from "next/font/google";
 import SitePreviewImage from "../../public/SitePreview.png";
-import { db } from "./firebaseConfig";
-import { collection, addDoc } from "firebase/firestore";
 import ledImg from "../../public/svg gradient.svg";
 import formBg from "../../public/Slice1.png";
 
-const notoSans = Noto_Sans({ subsets: ["latin"] });
+// const notoSans = Noto_Sans({ subsets: ["latin"] });
 
 interface Props {
   width: string;
@@ -109,13 +107,13 @@ export default function Home() {
       </div>
       <div id="form" className="p-6  ">
         <p
-          className={`text-5xl bg-gradient-to-b from-[#ffffff] to-[#2e2e2e] inline-block text-transparent bg-clip-text leading-[4rem] font-bold ${notoSans.className}`}
+          className={`text-5xl bg-gradient-to-b from-[#ffffff] to-[#2e2e2e] inline-block text-transparent bg-clip-text leading-[4rem] font-bold notoSans`}
         >
           Introducing Elecbits Flux
         </p>
         <div className="w-full flex justify-center">
           <p
-            className={`${notoSans.className} text-[#bfbfbf] font-bold tracking-widest`}
+            className={`notoSans text-[#bfbfbf] font-bold tracking-widest`}
           >
             Source Components Like A Pro
           </p>
