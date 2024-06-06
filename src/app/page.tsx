@@ -60,20 +60,17 @@ export default function Home() {
 
     setButtonStatus(true);
 
-    // const res = await fetch("/api/storeUser", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(formData),
-    // });
+    const res = await fetch("/api/storeUser", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
 
-    // const data = await res.json();
-    // setMessage(data.message);
+    const data = await res.json();
+    setMessage(data.message);
 
-    const data = {
-        message: ""
-    }
 
     if (data.message !== "Email already exists") {
       const emailResponse = await fetch("/api/sendEmail", {
@@ -92,13 +89,6 @@ export default function Home() {
     }
 
     setButtonStatus(false);
-
-    // try {
-    //     const docRef = await addDoc(collection(db, "signups"), formData);
-    //     console.log("Document written with ID: ", docRef.id);
-    // } catch (e) {
-    //     console.error("Error adding document: ", e);
-    // }
   };
 
   return (
