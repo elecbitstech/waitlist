@@ -262,18 +262,18 @@ export default function Home() {
           />
       </div>
       </div>
-      <div className=" relative w-full h-[138vh] mt-[12rem] mx-3 flex justify-center">
+      <div className="relative w-full h-[138vh] mt-[12rem] mx-3 flex justify-center">
         <Image
           src={SitePreviewImage}
           alt=""
-          className="w-full h-50% absolute z-[-9] "
+          className="w-full h-full absolute z-[-9] bg-cover"
         />
         <Image
           src="/footerCoverIMG.png"
           alt={""}
           height={1000}
           width={1500}
-          className="absolute bottom-0 w-full left-1/2 translate-x-[-50%] "
+          className="absolute bottom-0 w-full left-1/2 translate-x-[-50%] h-"
         />
         <div className="flex p-3 mb-16 z-20 w-[95%] absolute bottom-0 bg-gradient-to-r from-[rgba(7,2,252,0.3)] to-[rgba(0,255,255,0.3)] justify-between">
           <div className="flex flex-col items-center py-4 px-5">
