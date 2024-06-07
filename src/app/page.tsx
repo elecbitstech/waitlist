@@ -99,13 +99,13 @@ export default function Home() {
         id="top-bar"
         className="flex justify-between w-full bg-[#141414] p-2"
       >
-        <div className="logo-section flex items-center">
+        <a className="logo-section flex items-center cursor-pointer" target="_blank" href="https://platform.elecbits.in">
           <Image src="/Logo.png" alt="logo" height={120} width={120} />
-        </div>
-        <div className="linked-in-section flex items-center">
+        </a>
+        <a className="linked-in-section flex items-center cursor-pointer" target="_blank" href="https://www.linkedin.com/company/elecbits/mycompany/">
           <p className="text-[#999999] mr-2">Get Connected</p>
           <Image src="/LinkedIn.png" alt="logo" height={20} width={20} />
-        </div>
+        </a>
       </div>
       <div id="form" className="p-6  ">
         <p
