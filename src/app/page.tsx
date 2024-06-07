@@ -126,7 +126,7 @@ export default function Home() {
             onSubmit={handleSubmit}
           >
             <div className="col-span-2">
-              <label>{"Mail ID"}</label>
+              <label className="text-sm">{"Mail ID"}</label>
               <div className="mt-2"></div>
               <input
                 placeholder="Enter Your Mail Id"
@@ -142,7 +142,7 @@ export default function Home() {
               )}
             </div>
             <div className="col-span-1">
-              <label>{"Name"}</label>
+              <label className="text-sm">{"Name"}</label>
               <div className="mt-2"></div>
               <input
                 placeholder="Enter Your Name"
@@ -155,7 +155,7 @@ export default function Home() {
               />
             </div>
             <div className="col-span-1">
-              <label>{"Phone Number"}</label>
+              <label className="text-sm">{"Phone Number"}</label>
               <div className="mt-2"></div>
               <input
                 placeholder="Enter Your Phone Number"
@@ -171,7 +171,7 @@ export default function Home() {
               )}
             </div>
             <div className="col-span-1">
-              <label>{"Organization Name"}</label>
+              <label className="text-sm">{"Organization Name"}</label>
               <div className="mt-2"></div>
               <input
                 placeholder="Enter Organization Name"
@@ -184,7 +184,7 @@ export default function Home() {
               />
             </div>
             <div className="col-span-1">
-              <label>{"Designation"}</label>
+              <label className="text-sm">{"Designation"}</label>
               <div className="mt-2"></div>
               <input
                 placeholder="Enter Designation"
