@@ -43,7 +43,7 @@ export default function Home() {
           <a
             className="logo-section flex items-center cursor-pointer"
             target="_blank"
-            href="https://platform.elecbits.in"
+            href="https://elecbits.in"
           >
             <Image src="/Logo.png" alt="logo" height={120} width={120} />
           </a>
