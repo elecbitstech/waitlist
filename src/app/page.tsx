@@ -1,11 +1,11 @@
 import React from "react";
 import Image from "next/image";
-// import { Noto_Sans } from "next/font/google";
+import { Noto_Sans } from "next/font/google";
 import SitePreviewImage from "../../public/SitePreview.png";
 import formBg from "../../public/Slice1.png";
 import UserForm from "./form.component";
 
-// const notoSans = Noto_Sans({ subsets: ["latin"] });
+const notoSans = Noto_Sans({ subsets: ["latin"] });
 
 const FooterItem = ({
   title,
