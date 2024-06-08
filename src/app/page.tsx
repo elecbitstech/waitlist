@@ -40,7 +40,7 @@ export default function Home() {
           <a
             className="logo-section flex items-center cursor-pointer"
             target="_blank"
-            href="https://elecbits.in"
+            href="https://platform.elecbits.in"
           >
             <Image src="/Logo.png" alt="logo" height={120} width={120} />
           </a>
@@ -68,7 +68,7 @@ export default function Home() {
           </div>
           <div className="w-full flex flex-col items-center ">
             <UserForm />
-            <p className="text-3xl font-bold">Be the First to Experience</p>
+            <p className="text-3xl font-bold text-white">Be the First to Experience</p>
             <p className="text-3xl  bg-gradient-to-r from-[#33E7FF] to-[#0702FC] inline-block text-transparent bg-clip-text font-bold">
               Something Amazing
             </p>
