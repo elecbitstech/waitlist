@@ -2,9 +2,6 @@ import React from "react";
 import Image from "next/image";
 import { Noto_Sans } from "next/font/google";
 import SitePreviewImage from "../../public/SitePreview.png";
-import { db } from "./firebaseConfig";
-import { collection, addDoc } from "firebase/firestore";
-import ledImg from "../../public/svg gradient.svg";
 import formBg from "../../public/Slice1.png";
 import UserForm from "./form.component";
 
@@ -88,11 +85,11 @@ export default function Home() {
             alt={""}
             height={1000}
             width={1500}
-            className="absolute bo bg-black left-1/2 translate-x-[-50%]  z-[-10]"
+            className="absolute left-1/2 translate-x-[-50%]  z-[-10]"
           />
         </div>
       </div>
-      <div className="relative w-full h-[70vh] md:h-[138vh] mt-[12rem] mx-3 flex justify-center">
+      <div className="relative w-full h-[70vh] md:h-[138vh] mt-[4rem] md:mt-[12rem] mx-3 flex justify-center">
         <Image
           src={SitePreviewImage}
           alt=""
