@@ -85,7 +85,7 @@ export default function Home() {
             alt={""}
             height={1000}
             width={1500}
-            className="absolute left-1/2 translate-x-[-50%]  z-[-10]"
+            className="absolute left-1/2 translate-x-[-50%] bg-black z-[-10]"
           />
         </div>
       </div>
