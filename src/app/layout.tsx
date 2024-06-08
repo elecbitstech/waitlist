@@ -5,6 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  icons: "./favicon.ico",
   title: "Elecbits-Flux",
   description: "Elecbits Flux Waitlist Form",
 };
