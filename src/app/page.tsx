@@ -56,7 +56,7 @@ export default function Home() {
         <div id="form" className="p-0  md:p-6 ">
           <div className="w-full flex flex-col items-center justify-center">
             <p
-              className={`text-2xl md:text-5xl bg-gradient-to-b from-[#ffffff] to-[#2e2e2e] inline-block text-transparent bg-clip-text leading-[4rem] font-bold ${notoSans.className} mx-auto`}
+              className={`text-2xl md:text-5xl bg-gradient-to-b from-[#ffffff] to-[#2e2e2e] inline-block text-transparent bg-clip-text leading-tight md:leading-normal font-bold ${notoSans.className} mx-auto`}
             >
               Introducing Elecbits Flux
             </p>
@@ -68,8 +68,8 @@ export default function Home() {
           </div>
           <div className="w-full flex flex-col items-center ">
             <UserForm />
-            <p className="text-3xl font-bold text-white">Be the First to Experience</p>
-            <p className="text-3xl  bg-gradient-to-r from-[#33E7FF] to-[#0702FC] inline-block text-transparent bg-clip-text font-bold">
+            <p className="text-3xl font-bold text-white leading-tight md:leading-normal">Be the First to Experience</p>
+            <p className="text-3xl  bg-gradient-to-r from-[#33E7FF] to-[#0702FC] inline-block text-transparent bg-clip-text font-bold leading-tight md:leading-normal">
               Something Amazing
             </p>
             {/* <Image
