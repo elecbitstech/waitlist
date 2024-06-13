@@ -61,7 +61,7 @@ export default function Home() {
               Introducing Elecbits Flux
             </p>
             <p
-              className={`${notoSans.className} text-md md:text-lg text-[#bfbfbf] font-bold tracking-widest`}
+              className={`${notoSans.className} text-md md:text-lg text-[#bfbfbf] tracking-widest`}
             >
               Source Components Like A Pro
             </p>
@@ -114,8 +114,7 @@ export default function Home() {
           />
           <FooterItem
             title="Quality Assurance"
-            description="Streamline Bill of Materials with tiered solutions & data driven
-              insights"
+            description="Get authentic products with ‘zero defects’ following top-tier standards."
           />
           <FooterItem
             title="Effortless Delivery"
