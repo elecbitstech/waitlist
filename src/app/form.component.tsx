@@ -82,7 +82,7 @@ export default function UserForm() {
             onSubmit={handleSubmit}
         >
             <div className="col-span-2">
-                <label className="text-sm">{"Mail ID"}</label>
+                <label className="text-sm text-white">{"Mail ID"}</label>
                 <div className="mt-2"></div>
                 <input
                     placeholder="Enter Your Mail Id"
@@ -98,7 +98,7 @@ export default function UserForm() {
                 )}
             </div>
             <div className="col-span-1">
-                <label className="text-sm">{"Name"}</label>
+                <label className="text-sm text-white">{"Name"}</label>
                 <div className="mt-2"></div>
                 <input
                     placeholder="Enter Your Name"
@@ -111,7 +111,7 @@ export default function UserForm() {
                 />
             </div>
             <div className="col-span-1">
-                <label className="text-sm">{"Phone Number"}</label>
+                <label className="text-sm text-white">{"Phone Number"}</label>
                 <div className="mt-2"></div>
                 <input
                     placeholder="Enter Your Phone Number"
@@ -127,7 +127,7 @@ export default function UserForm() {
                 )}
             </div>
             <div className="col-span-1">
-                <label className="text-sm">{"Organization Name"}</label>
+                <label className="text-sm text-white">{"Organization Name"}</label>
                 <div className="mt-2"></div>
                 <input
                     placeholder="Enter Organization Name"
@@ -140,7 +140,7 @@ export default function UserForm() {
                 />
             </div>
             <div className="col-span-1">
-                <label className="text-sm">{"Designation"}</label>
+                <label className="text-sm text-white">{"Designation"}</label>
                 <div className="mt-2"></div>
                 <input
                     placeholder="Enter Designation"
@@ -184,14 +184,14 @@ export default function UserForm() {
                     </div>
                 ) : (
                     <>
-                        Join the Waitlist for Priority Access{" "}
-                        <Image
+                        Join the Waitlist for Priority Access{" "}➜
+                        {/* <Image
                             className="inline-block"
                             src={"/RightArrow.png"}
                             alt=""
                             width={20}
                             height={20}
-                        />
+                        /> */}
                     </>
                 )}
             </button>
