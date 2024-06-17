@@ -56,6 +56,16 @@ export async function POST(req: NextRequest) {
       .u-row .u-col-100 {
         width: 500px !important;
       }
+     
+        .box1 {
+      	border-left:20px solid #222222;
+      }
+      .box2 {
+      	border-right:20px solid #222222;
+      }
+      .lcontainer {
+       padding: 0px 0px 0px 120px;
+      }
     }
     
     @media (max-width: 520px) {
@@ -77,6 +87,15 @@ export async function POST(req: NextRequest) {
       }
       .u-col>div {
         margin: 0 auto;
+      }
+      .box1 {
+      	border-left:0px;
+      }
+      .box2 {
+      	border-right:0px;
+      }
+      .lcontainer {
+      	padding: 0px;
       }
     }
     
@@ -262,7 +281,7 @@ export async function POST(req: NextRequest) {
 
           <div class="u-row-container" style="padding: 0px;background-color: transparent">
             <div class="u-row" style="margin: 0 auto;min-width: 320px;max-width: 500px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;">
-              <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-image: url('https://assets.unlayer.com/projects/236357/1718344334747-TEXT%20BG.png');background-repeat: no-repeat;background-position: center center;background-color: transparent;">
+              <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-image: url('https://assets.unlayer.com/projects/236357/1718344334747-TEXT%20BG.png');background-repeat: no-repeat;background-position: center center;background-color: transparent;background-size:cover">
                 <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:500px;"><tr style="background-image: url('https://assets.unlayer.com/projects/236357/1718344334747-TEXT%20BG.png');background-repeat: no-repeat;background-position: center center;background-color: transparent;"><![endif]-->
 
                 <!--[if (mso)|(IE)]><td align="center" width="460" style="width: 460px;padding: 0px;border-top: 20px solid #222222;border-left: 20px solid #222222;border-right: 20px solid #222222;border-bottom: 20px solid #222222;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;" valign="top"><![endif]-->
@@ -452,7 +471,7 @@ export async function POST(req: NextRequest) {
                 <div class="u-col u-col-50" style="max-width: 320px;min-width: 250px;display: table-cell;vertical-align: top;">
                   <div style="height: 100%;width: 100% !important;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;">
                     <!--[if (!mso)&(!IE)]><!-->
-                    <div style="box-sizing: border-box; height: 100%; padding: 0px;border-top: 0px solid transparent;border-left: 20px solid #222222;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;">
+                    <div style="box-sizing: border-box; height: 100%; padding: 0px;border-top: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;" class="box1" >
                       <!--<![endif]-->
 
                       <table style="font-family:arial,helvetica,sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
@@ -539,7 +558,7 @@ export async function POST(req: NextRequest) {
                 <div class="u-col u-col-50" style="max-width: 320px;min-width: 250px;display: table-cell;vertical-align: top;">
                   <div style="height: 100%;width: 100% !important;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;">
                     <!--[if (!mso)&(!IE)]><!-->
-                    <div style="box-sizing: border-box; height: 100%; padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 20px solid #222222;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;">
+                    <div style="box-sizing: border-box; height: 100%; padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;" class="box2" >
 
                       <table style="font-family:arial,helvetica,sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
                         <tbody>
@@ -714,7 +733,7 @@ export async function POST(req: NextRequest) {
                 <div class="u-col u-col-50" style="max-width: 320px;min-width: 250px;display: table-cell;vertical-align: top;">
                   <div style="height: 100%;width: 100% !important;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;">
                     <!--[if (!mso)&(!IE)]><!-->
-                    <div style="box-sizing: border-box; height: 100%; padding: 0px 0px 0px 120px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;">
+                    <div style="box-sizing: border-box; height: 100%;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;" class="lcontainer" >
                       <!--<![endif]-->
 
                       <table style="font-family:arial,helvetica,sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
@@ -867,9 +886,7 @@ export async function POST(req: NextRequest) {
   <!--[if mso]></div><![endif]-->
   <!--[if IE]></div><![endif]-->
 </body>
-
-</html>
-
+tml>
 `,
     };
 
