@@ -1,27 +1,28 @@
-import nodemailer from 'nodemailer';
-import type { NextRequest } from 'next/server';
+import nodemailer from "nodemailer";
+import type { NextRequest } from "next/server";
 
 export async function POST(req: NextRequest) {
-    try {
-        const { email, name, phoneNumber, organizationName, designation } = await req.json();
+  try {
+    const { email, name, phoneNumber, organizationName, designation } =
+      await req.json();
 
-        let transporter = nodemailer.createTransport({
-            host: 'smtp.zeptomail.com',
-            port: 465,
-            auth: {
-                user: 'emailapikey',
-                pass: process.env.MAIL_PASS,
-            },
-        });
+    let transporter = nodemailer.createTransport({
+      host: "smtp.zeptomail.com",
+      port: 465,
+      auth: {
+        user: "emailapikey",
+        pass: process.env.MAIL_PASS,
+      },
+    });
 
-        let mailOptions = {
-            from: {
-                name: 'Elecbits Platform',
-                address: 'platform@elecbits.in',
-            },
-            to: email,
-            subject: 'Signup Confirmation',
-            html: `
+    let mailOptions = {
+      from: {
+        name: "Elecbits Platform",
+        address: "platform@elecbits.in",
+      },
+      to: email,
+      subject: "Signup Confirmation",
+      html: `
             <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 
@@ -96,6 +97,9 @@ export async function POST(req: NextRequest) {
       }
       .lcontainer {
       	padding: 0px;
+      }
+      .bgsection {
+      	background-size:cover;
       }
     }
     
@@ -462,7 +466,7 @@ export async function POST(req: NextRequest) {
         <v:fill type="frame" src="https://assets.unlayer.com/projects/236357/1718345936208-Screenshot%202024-06-14%20at%2011.41.46%201.png" /><v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
       <![endif]-->
 
-          <div class="u-row-container" style="padding: 0px;background-image: url('https://assets.unlayer.com/projects/236357/1718345936208-Screenshot%202024-06-14%20at%2011.41.46%201.png');background-repeat: no-repeat;background-position: center center;background-color: transparent">
+          <div class="u-row-container bgsection" style="padding: 0px;background-image: url('https://assets.unlayer.com/projects/236357/1718345936208-Screenshot%202024-06-14%20at%2011.41.46%201.png');background-repeat: no-repeat;background-position: center center;background-color: transparent"  >
             <div class="u-row" style="margin: 0 auto;min-width: 320px;max-width: 500px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;">
               <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-color: transparent;">
                 <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-image: url('https://assets.unlayer.com/projects/236357/1718345936208-Screenshot%202024-06-14%20at%2011.41.46%201.png');background-repeat: no-repeat;background-position: center center;background-color: transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:500px;"><tr style="background-color: transparent;"><![endif]-->
@@ -887,6 +891,7 @@ export async function POST(req: NextRequest) {
   <!--[if IE]></div><![endif]-->
 </body>
 tml>
+
 `,
     };
 
