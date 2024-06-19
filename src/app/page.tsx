@@ -72,7 +72,7 @@ export default function Home() {
           <div className="w-full flex flex-col items-center ">
             <UserForm />
             <p className="text-3xl font-bold text-white leading-tight md:leading-normal">Be the First to Experience</p>
-            <p className="text-3xl  bg-gradient-to-r from-[#33E7FF] to-[#0702FC] inline-block text-transparent bg-clip-text font-bold leading-tight md:leading-normal pb-10">
+            <p className="text-3xl  bg-gradient-to-r from-[#33E7FF] to-[#0702FC] inline-block text-transparent bg-clip-text font-bold leading-tight md:leading-normal pb-10 md:pb-0">
               Something Amazing
             </p>
             {/* <Image
