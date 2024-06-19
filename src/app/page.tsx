@@ -9,15 +9,18 @@ const notoSans = Noto_Sans({ subsets: ["latin"] });
 
 const FooterItem = ({
   title,
-  description,
+  description1,
+  description2
 }: {
   title: string;
-  description: string;
+  description1: string;
+  description2: string;
 }) => {
   return (
     <div className="flex flex-col items-center py-4 px-5 text-center">
       <p className="text-lg  md:text-xl font-bold mb-2 text-white">{title}</p>
-      <p className="text-xs text-center text-white">{description}</p>
+      <p className="text-xs text-center text-white">{description1}</p>
+      <p className="text-xs text-center text-white">{description2}</p>
     </div>
   );
 };
@@ -54,22 +57,22 @@ export default function Home() {
           </a>
         </div>
         <div id="form" className="p-0  md:p-6 ">
-          <div className="w-full flex flex-col items-center justify-center">
+          <div className="w-full flex flex-col items-center justify-center pt-10">
             <p
-              className={`text-2xl md:text-5xl bg-gradient-to-b from-[#ffffff] to-[#2e2e2e] inline-block text-transparent bg-clip-text leading-tight md:leading-normal font-bold ${notoSans.className} mx-auto`}
+              className={`text-3xl md:text-5xl bg-gradient-to-b from-[#ffffff] to-[#2e2e2e] inline-block text-transparent bg-clip-text leading-tight md:leading-normal font-bold ${notoSans.className} mx-auto`}
             >
               Introducing Elecbits XOR
             </p>
             <p
               className={`${notoSans.className} text-md md:text-lg text-[#bfbfbf] tracking-widest`}
             >
-              Source Components Like A Pro
+              <strong>Simpler • Faster • Scalable Electronics</strong>
             </p>
           </div>
           <div className="w-full flex flex-col items-center ">
             <UserForm />
             <p className="text-3xl font-bold text-white leading-tight md:leading-normal">Be the First to Experience</p>
-            <p className="text-3xl  bg-gradient-to-r from-[#33E7FF] to-[#0702FC] inline-block text-transparent bg-clip-text font-bold leading-tight md:leading-normal">
+            <p className="text-3xl  bg-gradient-to-r from-[#33E7FF] to-[#0702FC] inline-block text-transparent bg-clip-text font-bold leading-tight md:leading-normal pb-10">
               Something Amazing
             </p>
             {/* <Image
@@ -100,25 +103,28 @@ export default function Home() {
           alt={""}
           height={1000}
           width={1500}
-          className="absolute bottom-0 w-full left-1/2 translate-x-[-50%] h-"
+          className="absolute bottom-0 md:opacity-50 w-full left-1/2 translate-x-[-50%] h-"
         />
-        <div className="grid grid-cols-2 md:grid-cols-4 p-3 mb-16 z-20 w-[95%] absolute bottom-0 bg-gradient-to-r from-[rgba(7,2,252,0.5)] md:from-[rgba(7,2,252,0.3)] to-[rgba(0,255,255,0.5)] md:to-[rgba(0,255,255,0.3)] ">
+        <div className="grid grid-cols-2 md:grid-cols-4 p-3 mb-16 z-20 w-[95%] absolute bottom-0 bg-gradient-to-r from-[rgba(0,102,255,0.7)] to-[rgba(0,0,153,0.7)] ">
           <FooterItem
             title="Real-Time Sourcing"
-            description="Get instant quotes from 4000+ vendors & slash procurement time"
+            description1="Get instant quotes from 4000+ vendors"
+            description2="& slash procurement time"
           />
           <FooterItem
             title="One Stop Shop"
-            description="Simplify Everything. Manage Components, quotes & delivery from a
-              single platform"
+            description1="Simplify Everything. Manage Components,"
+            description2="quotes & delivery from a single platform"
           />
           <FooterItem
             title="Quality Assurance"
-            description="Get authentic products with ‘zero defects’ following top-tier standards."
+            description1="Get authentic products with ‘zero defects’"
+            description2="following top-tier standards."
           />
           <FooterItem
             title="Effortless Delivery"
-            description="Focus on your business, EB XOR handles the rest"
+            description1="Focus on your business,"
+            description2="EB XOR handles the rest"
           />
         </div>
       </div>

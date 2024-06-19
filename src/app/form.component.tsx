@@ -94,7 +94,9 @@ export default function UserForm() {
                     required
                 />
                 {message && (
-                    <p className="text-red-500 text-xs mt-1">{message}</p>
+                    (message === 'Email successfully added' && <p className="text-white-500 text-xs mt-1">{message}</p>)
+                    || (<p className="text-red-500 text-xs mt-1">{message}</p>)
+
                 )}
             </div>
             <div className="col-span-1">
