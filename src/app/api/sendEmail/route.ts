@@ -208,7 +208,7 @@ export async function POST(req: NextRequest) {
 
           <div class="u-row-container" style="padding: 0px;background-color: transparent">
             <div class="u-row" style="margin: 0 auto;min-width: 320px;max-width: 500px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: #ffffff;">
-              <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-image: url('https://assets.unlayer.com/projects/236357/1718341502262-backgraound%20-%20launch.png');background-repeat: no-repeat;background-position: center center;background-color: transparent;">
+              <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-image: url('https://assets.unlayer.com/projects/236357/1718341502262-backgraound%20-%20launch.png');background-repeat: repeat;background-position: center center;background-color: transparent;">
                 <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:500px;"><tr style="background-image: url('https://assets.unlayer.com/projects/236357/1718341502262-backgraound%20-%20launch.png');background-repeat: no-repeat;background-position: center center;background-color: #ffffff;"><![endif]-->
 
                 <!--[if (mso)|(IE)]><td align="center" width="460" style="width: 460px;padding: 0px;border-top: 0px solid transparent;border-left: 20px solid #222222;border-right: 20px solid #222222;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;" valign="top"><![endif]-->
@@ -241,8 +241,8 @@ export async function POST(req: NextRequest) {
                                 <tr>
                                   <td style="padding-right: 0px;padding-left: 0px;" align="center">
 
-                                    <img align="center" border="0" src="https://assets.unlayer.com/projects/236357/1718342688747-Elecbits%20Flux.png" alt="" title="" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 88%;max-width: 423.28px;"
-                                      width="423.28" />
+                                    <img align="center" border="0" src="https://assets.unlayer.com/projects/236357/1718720559929-Elecbits%20XOR.png" alt="" title="" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 75%;max-width: 369px;"
+                                      width="369" />
 
                                   </td>
                                 </tr>
@@ -617,7 +617,7 @@ export async function POST(req: NextRequest) {
                             <td style="overflow-wrap:break-word;word-break:break-word;padding:0px 10px 26px;font-family:arial,helvetica,sans-serif;" align="left">
 
                               <div style="font-size: 12px; line-height: 140%; text-align: center; word-wrap: break-word;">
-                                <p style="line-height: 140%;"><span style="line-height: 16.8px;"></span><span style="line-height: 16.8px;"></span><span style="line-height: 16.8px;"></span><span style="color: #ffffff; line-height: 16.8px;">Focus on your business, </span><br><span style="color: #ffffff; line-height: 16.8px;">EB Flux handles the rest.</span></p>
+                                <p style="line-height: 140%;"><span style="line-height: 16.8px;"></span><span style="line-height: 16.8px;"></span><span style="line-height: 16.8px;"></span><span style="color: #ffffff; line-height: 16.8px;">Focus on your business, </span><br><span style="color: #ffffff; line-height: 16.8px;">EB XOR handles the rest.</span></p>
                               </div>
 
                             </td>
@@ -890,7 +890,7 @@ export async function POST(req: NextRequest) {
   <!--[if mso]></div><![endif]-->
   <!--[if IE]></div><![endif]-->
 </body>
-tml>
+</html>
 
 `,
     };

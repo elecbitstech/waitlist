@@ -58,7 +58,7 @@ export default function Home() {
             <p
               className={`text-2xl md:text-5xl bg-gradient-to-b from-[#ffffff] to-[#2e2e2e] inline-block text-transparent bg-clip-text leading-tight md:leading-normal font-bold ${notoSans.className} mx-auto`}
             >
-              Introducing Elecbits Flux
+              Introducing Elecbits XOR
             </p>
             <p
               className={`${notoSans.className} text-md md:text-lg text-[#bfbfbf] tracking-widest`}
@@ -118,7 +118,7 @@ export default function Home() {
           />
           <FooterItem
             title="Effortless Delivery"
-            description="Focus on your business, EB Flux handles the rest"
+            description="Focus on your business, EB XOR handles the rest"
           />
         </div>
       </div>

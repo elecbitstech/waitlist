@@ -6,8 +6,8 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   icons: "./favicon.ico",
-  title: "Elecbits-Flux",
-  description: "Elecbits Flux Waitlist Form",
+  title: "Elecbits-XOR",
+  description: "Elecbits XOR Waitlist Form",
 };
 
 export default function RootLayout({
