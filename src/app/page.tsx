@@ -57,7 +57,7 @@ export default function Home() {
           </a>
         </div>
         <div id="form" className="p-0  md:p-6 ">
-          <div className="w-full flex flex-col items-center justify-center pt-10">
+          <div className="w-full flex flex-col items-center justify-center pt-8 md:pt-0">
             <p
               className={`text-3xl md:text-5xl bg-gradient-to-b from-[#ffffff] to-[#2e2e2e] inline-block text-transparent bg-clip-text leading-tight md:leading-normal font-bold ${notoSans.className} mx-auto`}
             >
