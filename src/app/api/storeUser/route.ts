@@ -20,18 +20,21 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ message: 'All fields are required' }, { status: 400 });
     }
 
-    const userRef = db.collection('signups').doc(email);
+    const userRef = db.collection('signup').doc(email);
     const doc = await userRef.get();
+
+    const signupTime = new Date();
 
     if (doc.exists) {
       return NextResponse.json({ message: 'Email already exists' }, { status: 409 });
     }
 
-    await db.collection('signups').doc(email).set({
+    await db.collection('signup').doc(email).set({
       name,
       phoneNumber,
       organizationName,
       designation,
+      time: signupTime.toISOString()
     });
 
     return NextResponse.json({ message: 'Email successfully added' }, { status: 200 });

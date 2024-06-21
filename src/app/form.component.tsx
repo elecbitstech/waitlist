@@ -32,7 +32,6 @@ export default function UserForm() {
                 setPhoneError("");
             }
         }
-        console.log(formData);
     };
 
     const handleSubmit = async (e: any) => {
@@ -45,6 +44,7 @@ export default function UserForm() {
 
         setButtonStatus(true);
 
+
         const res = await fetch("/api/storeUser", {
             method: "POST",
             headers: {
@@ -52,6 +52,7 @@ export default function UserForm() {
             },
             body: JSON.stringify(formData),
         });
+
 
         const data = await res.json();
         setMessage(data.message);
