@@ -1,7 +1,47 @@
 import nodemailer from "nodemailer";
 import type { NextRequest } from "next/server";
 
-function getEmailTemplate(name:string) {
+function clientEmailTitle(name: string) {
+  return `
+  Congratulations <strong>${name}!</strong> Your Priority Access Confirmed`
+}
+
+function emailTitle() {
+  return `
+  We've a new signup on the waitlist!`
+}
+
+function clientBody() {
+  return `
+  <div style="font-size: 12px; line-height: 140%; text-align: left; word-wrap: break-word;">
+    <p style="line-height: 140%;"><span style="line-height: 16.8px;"></span><span style="line-height: 16.8px;"></span>
+      <span
+        style="color: #ffffff; line-height: 16.8px;">This email confirms your spot on the waitlist. As a valued member, you'll get early access to the platform as soon as we go live.
+        </span>
+    </p>
+    <p style="line-height: 140%;"><br><span style="color: #ffffff; line-height: 16.8px;">Be on top of all the updates regarding the launch date and other exciting news.</span><br><span style="color: #ffffff; line-height: 16.8px;">In the meantime, if you have any queries, please reach out to us.</span></p>
+  </div>`
+}
+
+function adminBody(name:string, email: string, phone: number, organizationName: string, designation: string) {
+  return `
+  <div style="font-size: 12px; line-height: 140%; text-align: left; word-wrap: break-word;">
+    <p style="line-height: 140%;"><span style="line-height: 16.8px;"></span><span style="line-height: 16.8px;"></span>
+      <span
+        style="color: #ffffff; line-height: 16.8px;">Here are the details for the new signup:
+        </span>
+    </p>
+    <p style="line-height: 140%;"><br><span style="color: #ffffff; line-height: 16.8px;">
+    Name: ${name}<br>
+    Email: ${email}<br>
+    Phone: ${phone}<br>
+    Organization: ${organizationName}<br>
+    Designation: ${designation}
+    </span><br></p>
+  </div>`
+}
+
+function getEmailTemplate(title: string, body: string) {
   return `
   <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
@@ -281,7 +321,7 @@ function getEmailTemplate(name:string) {
                                 <td style="overflow-wrap:break-word;word-break:break-word;padding:9px;font-family:arial,helvetica,sans-serif;" align="left">
 
                                   <div style="font-size: 14px; line-height: 140%; text-align: center; word-wrap: break-word;">
-                                    <p style="line-height: 140%;"><span style="line-height: 19.6px;"></span><span style="line-height: 19.6px;"></span><span style="line-height: 19.6px; color: #ffffff;">Congratulations <strong>${name}!</strong> Your Priority Access Confirmed</span></p>
+                                    <p style="line-height: 140%;"><span style="line-height: 19.6px;"></span><span style="line-height: 19.6px;"></span><span style="line-height: 19.6px; color: #ffffff;">${title}</span></p>
                                   </div>
 
                                 </td>
@@ -328,15 +368,7 @@ function getEmailTemplate(name:string) {
                               <tr>
                                 <td style="overflow-wrap:break-word;word-break:break-word;padding:0px 22px 10px;font-family:arial,helvetica,sans-serif;" align="left">
 
-                                  <div style="font-size: 12px; line-height: 140%; text-align: left; word-wrap: break-word;">
-                                    <p style="line-height: 140%;"><span style="line-height: 16.8px;"></span><span style="line-height: 16.8px;"></span>
-                                      <span
-                                        style="color: #ffffff; line-height: 16.8px;">This email confirms your spot on the waitlist. As a valued member, you'll get early access to the platform as soon as we go live.
-                                        </span>
-                                    </p>
-                                    <p style="line-height: 140%;"><br><span style="color: #ffffff; line-height: 16.8px;">Be on top of all the updates regarding the launch date and other exciting news.</span><br><span style="color: #ffffff; line-height: 16.8px;">In the meantime, if you have any queries, please reach out to us.</span></p>
-                                  </div>
-
+                                  ${body}
                                 </td>
                               </tr>
                             </tbody>
@@ -911,9 +943,21 @@ export async function POST(req: NextRequest) {
       },
     });
 
-    const emailContent = getEmailTemplate(name);
+    const client = {
+      title: clientEmailTitle(name),
+      body: clientBody()
+    }
 
-    await sendEmail(transporter, email, emailContent);
+    const clientEmailContent = getEmailTemplate(client.title, client.body);
+
+    await sendEmail(transporter, email, clientEmailContent);
+
+    const admin = {
+      title: emailTitle(),
+      body: adminBody(name,email,phoneNumber,organizationName,designation)
+    }
+
+    const emailContent = getEmailTemplate(admin.title, admin.body);
 
 
     setImmediate(async () => {
